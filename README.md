@@ -47,7 +47,7 @@ A professional web application for creating balanced soccer teams from a list of
 
 ```bash
 # Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/guysade/soccer-app.git
 
 # Navigate to the app directory
 cd soccer-team-maker
