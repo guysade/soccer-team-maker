@@ -27,9 +27,37 @@ const Dashboard: React.FC = () => {
   const [showHistory, setShowHistory] = useState(false);
   const [selectionHistory, setSelectionHistory] = useState<TeamSelection[]>([]);
 
+  const [isInitializing, setIsInitializing] = useState(true);
+  const [fileServerStatus, setFileServerStatus] = useState<boolean | null>(null);
+
   useEffect(() => {
-    loadData();
+    initializeData();
   }, []);
+
+  const initializeData = async () => {
+    setIsInitializing(true);
+    try {
+      // Use async initialization to recover from file server if localStorage is empty
+      const data = await StorageManager.initialize();
+      setPlayers(data.players);
+      setConstraints(data.constraints);
+      setSelectionHistory(StorageManager.loadTeamSelectionHistory());
+      setFileServerStatus(StorageManager.isFileServerAvailable());
+
+      if (data.lastGenerated) {
+        setTeams(data.lastGenerated.teams);
+        setActivePlayerIds(data.lastGenerated.activePlayerIds);
+        setShowTeams(true);
+      } else {
+        setActivePlayerIds(data.players.filter(p => p.active).map(p => p.id));
+      }
+    } catch (error) {
+      console.error('Failed to initialize data:', error);
+      // Fallback to sync loadData
+      loadData();
+    }
+    setIsInitializing(false);
+  };
 
   const loadData = () => {
     const data = StorageManager.loadData();
@@ -83,8 +111,7 @@ const Dashboard: React.FC = () => {
         teamSize: 6,
         respectConstraints: true,
         teamConstraints: constraints,
-        previousSelections: selectionHistory,
-        diversifyPairings: true
+        diversifyPairings: false
       });
 
       setTeams(generatedTeams);
@@ -421,11 +448,23 @@ const Dashboard: React.FC = () => {
               <span className="stat-label">Teams</span>
             </div>
           )}
+          <div className="quick-stat backup-status" title={fileServerStatus ? 'Data is being backed up to file' : 'File backup unavailable - run server.js'}>
+            <span className="stat-number">{fileServerStatus ? '✓' : '!'}</span>
+            <span className="stat-label" style={{ color: fileServerStatus ? '#4ade80' : '#f59e0b' }}>
+              {fileServerStatus ? 'Backed Up' : 'No Backup'}
+            </span>
+          </div>
         </div>
       </div>
 
       {/* Main Content */}
-      {!showTeams ? (
+      {isInitializing ? (
+        <div className="empty-state">
+          <div className="loading-animation large">⚽</div>
+          <h3>Loading...</h3>
+          <p>Checking for saved data...</p>
+        </div>
+      ) : !showTeams ? (
         <div className="player-selection">
           <div className="selection-header">
             <div className="header-content">

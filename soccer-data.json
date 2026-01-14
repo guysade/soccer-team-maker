@@ -1,0 +1,464 @@
+{
+  "players": [
+    {
+      "name": "גיא",
+      "rating": 5,
+      "position": "MID",
+      "conflicts": [],
+      "active": true,
+      "id": "mjsbjycjptlytzieq3r"
+    },
+    {
+      "name": "תום",
+      "rating": 5,
+      "position": "MID",
+      "conflicts": [],
+      "active": false,
+      "id": "mjsbk33wn1jog9h3esb"
+    },
+    {
+      "name": "לירון",
+      "rating": 2.5,
+      "position": "FWD",
+      "conflicts": [],
+      "active": false,
+      "id": "mjsbk9kt1mu588zvmg2"
+    },
+    {
+      "name": "מתן גיל",
+      "rating": 5,
+      "position": "MID",
+      "conflicts": [],
+      "active": false,
+      "id": "mjsbkkcnbbgyelzydkj"
+    },
+    {
+      "name": "רגב",
+      "rating": 3,
+      "position": "DEF",
+      "conflicts": [],
+      "active": false,
+      "id": "mjsbkphw5529t7t3gwh"
+    },
+    {
+      "name": "עודד",
+      "rating": 3.5,
+      "position": "MID",
+      "conflicts": [],
+      "active": false,
+      "id": "mjsbkw3iwcypdj0p1fl"
+    },
+    {
+      "name": "אדיר",
+      "rating": 2,
+      "position": "DEF",
+      "conflicts": [],
+      "active": false,
+      "id": "mjsbl2gv68optfej3wq"
+    },
+    {
+      "name": "אופיר",
+      "rating": 5,
+      "position": "FWD",
+      "conflicts": [],
+      "active": true,
+      "id": "mjsbl816s2q4tfn7kis"
+    },
+    {
+      "name": "בן דורני",
+      "rating": 2.5,
+      "position": "DEF",
+      "conflicts": [],
+      "active": true,
+      "id": "mjsblm6rlpby6m771l"
+    },
+    {
+      "name": "אלמוג",
+      "rating": 4,
+      "position": "DEF",
+      "conflicts": [],
+      "active": true,
+      "id": "mjsbls5d2pf29e108aw"
+    },
+    {
+      "name": "דון",
+      "rating": 3.5,
+      "position": "GK",
+      "conflicts": [],
+      "active": true,
+      "id": "mjsblygfxd87qwxw7es"
+    },
+    {
+      "name": "דור",
+      "rating": 2.5,
+      "position": "MID",
+      "conflicts": [],
+      "active": false,
+      "id": "mjsbm7345xsvopunue8"
+    },
+    {
+      "name": "מתן א",
+      "rating": 3.5,
+      "position": "FWD",
+      "conflicts": [],
+      "active": false,
+      "id": "mjsbml6853481mtzxci"
+    },
+    {
+      "name": "נוהר",
+      "rating": 4.5,
+      "position": "MID",
+      "conflicts": [],
+      "active": false,
+      "id": "mjsbmrsy2bbu0zww2i7"
+    },
+    {
+      "name": "יונה",
+      "rating": 2.5,
+      "position": "FWD",
+      "conflicts": [],
+      "active": false,
+      "id": "mjsbmy4lxujyqzlut1l"
+    },
+    {
+      "name": "רועי",
+      "rating": 4.5,
+      "position": "FWD",
+      "conflicts": [],
+      "active": true,
+      "id": "mjsbn5vd6pph2mkqwta"
+    },
+    {
+      "name": "אריאלי",
+      "rating": 1.5,
+      "position": "MID",
+      "conflicts": [],
+      "active": false,
+      "id": "mjsbnj3z2j4jyna82g"
+    },
+    {
+      "name": "ורון",
+      "rating": 3.5,
+      "position": "MID",
+      "conflicts": [],
+      "active": true,
+      "id": "mjsbns0qpm6x3q9dhig"
+    },
+    {
+      "name": "אביב",
+      "rating": 3,
+      "position": "MID",
+      "conflicts": [],
+      "active": false,
+      "id": "mkdvtqj6m84tn7zpgtp"
+    },
+    {
+      "name": "שבי",
+      "rating": 3,
+      "position": "MID",
+      "conflicts": [],
+      "active": false,
+      "id": "mkdvtuyzsm1lgbumpu"
+    },
+    {
+      "name": "יותם",
+      "rating": 4,
+      "position": "MID",
+      "conflicts": [],
+      "active": false,
+      "id": "mkdvu0408mbm371onp7"
+    },
+    {
+      "name": "קופנס",
+      "rating": 3.5,
+      "position": "FWD",
+      "conflicts": [],
+      "active": true,
+      "id": "mkdw6p3d7kmlgkzixvk"
+    },
+    {
+      "name": "אביב (מאור)",
+      "rating": 3,
+      "position": "MID",
+      "conflicts": [],
+      "active": true,
+      "id": "mkdw6xubqoi2qg8kcc8"
+    },
+    {
+      "name": "יותם (מאור)",
+      "rating": 4,
+      "position": "MID",
+      "conflicts": [],
+      "active": true,
+      "id": "mkdw76ulicrkvac56lp"
+    },
+    {
+      "name": "שבי (מאור)",
+      "rating": 3,
+      "position": "MID",
+      "conflicts": [],
+      "active": true,
+      "id": "mkdw7escwd1r5k546us"
+    },
+    {
+      "name": "נדב",
+      "rating": 3,
+      "position": "DEF",
+      "conflicts": [],
+      "active": true,
+      "id": "mkdw8621wec2rn44we"
+    },
+    {
+      "name": "טל",
+      "rating": 3.5,
+      "position": "DEF",
+      "conflicts": [],
+      "active": true,
+      "id": "mkdw8o4sf82sfajvdmj"
+    },
+    {
+      "name": "ירין 2",
+      "rating": 3,
+      "position": "MID",
+      "conflicts": [],
+      "active": true,
+      "id": "mkdw9b02e48kw4ric"
+    },
+    {
+      "name": "ניקיטה",
+      "rating": 4,
+      "position": "FWD",
+      "conflicts": [],
+      "active": true,
+      "id": "mkdwh0xc9oxtij0yuro"
+    },
+    {
+      "name": "וויס",
+      "rating": 3,
+      "position": "MID",
+      "conflicts": [],
+      "active": true,
+      "id": "mkdwha6ptdv0w7adpan"
+    },
+    {
+      "name": "עומרי (קופנס)",
+      "rating": 3,
+      "position": "MID",
+      "conflicts": [],
+      "active": true,
+      "id": "mkdwhxps7xvrf0apt5k"
+    }
+  ],
+  "constraints": [],
+  "settings": {
+    "defaultTeamSize": 6,
+    "teamNames": [
+      "Team Alpha",
+      "Team Beta",
+      "Team Gamma",
+      "Team Delta",
+      "Team Epsilon",
+      "Team Zeta"
+    ]
+  },
+  "lastGenerated": {
+    "date": "2026-01-14",
+    "teams": [
+      {
+        "id": "6nvrw6vf4",
+        "name": "White Team",
+        "players": [
+          {
+            "name": "גיא",
+            "rating": 5,
+            "position": "MID",
+            "conflicts": [],
+            "active": true,
+            "id": "mjsbjycjptlytzieq3r",
+            "weight": 18
+          },
+          {
+            "name": "קופנס",
+            "rating": 3.5,
+            "position": "FWD",
+            "conflicts": [],
+            "active": true,
+            "id": "mkdw6p3d7kmlgkzixvk",
+            "weight": 14
+          },
+          {
+            "name": "נדב",
+            "rating": 3,
+            "position": "DEF",
+            "conflicts": [],
+            "active": true,
+            "id": "mkdw8621wec2rn44we",
+            "weight": 12
+          },
+          {
+            "name": "ורון",
+            "rating": 3.5,
+            "position": "MID",
+            "conflicts": [],
+            "active": true,
+            "id": "mjsbns0qpm6x3q9dhig"
+          },
+          {
+            "name": "עומרי (קופנס)",
+            "rating": 3,
+            "position": "MID",
+            "conflicts": [],
+            "active": true,
+            "id": "mkdwhxps7xvrf0apt5k"
+          },
+          {
+            "name": "טל",
+            "rating": 3.5,
+            "position": "DEF",
+            "conflicts": [],
+            "active": true,
+            "id": "mkdw8o4sf82sfajvdmj"
+          }
+        ],
+        "averageRating": 3.58,
+        "color": "#FFFFFF",
+        "borderColor": "#E0E0E0",
+        "teamColor": "white"
+      },
+      {
+        "id": "l6qdwkh51",
+        "name": "Colored Team",
+        "players": [
+          {
+            "name": "אופיר",
+            "rating": 5,
+            "position": "FWD",
+            "conflicts": [],
+            "active": true,
+            "id": "mjsbl816s2q4tfn7kis",
+            "weight": 17
+          },
+          {
+            "name": "אלמוג",
+            "rating": 4,
+            "position": "DEF",
+            "conflicts": [],
+            "active": true,
+            "id": "mjsbls5d2pf29e108aw",
+            "weight": 14
+          },
+          {
+            "name": "בן דורני",
+            "rating": 2.5,
+            "position": "DEF",
+            "conflicts": [],
+            "active": true,
+            "id": "mjsblm6rlpby6m771l",
+            "weight": 11
+          },
+          {
+            "name": "ירין 2",
+            "rating": 3,
+            "position": "MID",
+            "conflicts": [],
+            "active": true,
+            "id": "mkdw9b02e48kw4ric"
+          },
+          {
+            "name": "דון",
+            "rating": 3.5,
+            "position": "GK",
+            "conflicts": [],
+            "active": true,
+            "id": "mjsblygfxd87qwxw7es"
+          }
+        ],
+        "averageRating": 3.6,
+        "color": "#4CAF50",
+        "borderColor": "#4CAF50",
+        "teamColor": "colored"
+      },
+      {
+        "id": "em1u47yga",
+        "name": "Black Team",
+        "players": [
+          {
+            "name": "יותם (מאור)",
+            "rating": 4,
+            "position": "MID",
+            "conflicts": [],
+            "active": true,
+            "id": "mkdw76ulicrkvac56lp",
+            "weight": 16
+          },
+          {
+            "name": "ניקיטה",
+            "rating": 4,
+            "position": "FWD",
+            "conflicts": [],
+            "active": true,
+            "id": "mkdwh0xc9oxtij0yuro",
+            "weight": 15
+          },
+          {
+            "name": "וויס",
+            "rating": 3,
+            "position": "MID",
+            "conflicts": [],
+            "active": true,
+            "id": "mkdwha6ptdv0w7adpan",
+            "weight": 14
+          },
+          {
+            "name": "שבי (מאור)",
+            "rating": 3,
+            "position": "MID",
+            "conflicts": [],
+            "active": true,
+            "id": "mkdw7escwd1r5k546us"
+          },
+          {
+            "name": "אביב (מאור)",
+            "rating": 3,
+            "position": "MID",
+            "conflicts": [],
+            "active": true,
+            "id": "mkdw6xubqoi2qg8kcc8"
+          },
+          {
+            "name": "רועי",
+            "rating": 4.5,
+            "position": "FWD",
+            "conflicts": [],
+            "active": true,
+            "id": "mjsbn5vd6pph2mkqwta"
+          }
+        ],
+        "averageRating": 3.58,
+        "color": "#000000",
+        "borderColor": "#000000",
+        "teamColor": "black"
+      }
+    ],
+    "activePlayerIds": [
+      "mjsbjycjptlytzieq3r",
+      "mjsbl816s2q4tfn7kis",
+      "mjsblm6rlpby6m771l",
+      "mjsbls5d2pf29e108aw",
+      "mjsblygfxd87qwxw7es",
+      "mjsbn5vd6pph2mkqwta",
+      "mjsbns0qpm6x3q9dhig",
+      "mkdw6p3d7kmlgkzixvk",
+      "mkdw6xubqoi2qg8kcc8",
+      "mkdw76ulicrkvac56lp",
+      "mkdw7escwd1r5k546us",
+      "mkdw8621wec2rn44we",
+      "mkdw8o4sf82sfajvdmj",
+      "mkdw9b02e48kw4ric",
+      "mkdwh0xc9oxtij0yuro",
+      "mkdwha6ptdv0w7adpan",
+      "mkdwhxps7xvrf0apt5k"
+    ]
+  },
+  "teamSelectionHistory": []
+}

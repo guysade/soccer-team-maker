@@ -3,10 +3,80 @@ import { Player, Team, AppData, TeamConstraint, TeamSelection } from '../types';
 const STORAGE_KEY = 'soccerTeamMaker';
 const BACKUP_KEY_PREFIX = 'soccerTeamMaker_backup_';
 const MAX_BACKUPS = 3;
+const FILE_SERVER_URL = 'http://localhost:3001';
 
 export class StorageManager {
+  private static fileServerAvailable: boolean | null = null;
+
   private static getStorageKey(suffix?: string): string {
     return suffix ? `${STORAGE_KEY}_${suffix}` : STORAGE_KEY;
+  }
+
+  // File server methods for persistent storage
+  private static async saveToFileServer(data: AppData): Promise<boolean> {
+    try {
+      const response = await fetch(`${FILE_SERVER_URL}/data`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const result = await response.json();
+      this.fileServerAvailable = true;
+      return result.success;
+    } catch (error) {
+      this.fileServerAvailable = false;
+      console.warn('File server not available, using localStorage only');
+      return false;
+    }
+  }
+
+  private static async loadFromFileServer(): Promise<AppData | null> {
+    try {
+      const response = await fetch(`${FILE_SERVER_URL}/data`);
+      const result = await response.json();
+      this.fileServerAvailable = true;
+      return result.data;
+    } catch (error) {
+      this.fileServerAvailable = false;
+      console.warn('File server not available');
+      return null;
+    }
+  }
+
+  // Initialize storage - recover from file if localStorage is empty
+  public static async initialize(): Promise<AppData> {
+    const localData = localStorage.getItem(STORAGE_KEY);
+
+    // If localStorage is empty, try to recover from file server
+    if (!localData) {
+      console.log('localStorage empty, attempting to recover from file server...');
+      const fileData = await this.loadFromFileServer();
+      if (fileData && fileData.players && fileData.players.length > 0) {
+        console.log(`Recovered ${fileData.players.length} players from file server!`);
+        // Save recovered data to localStorage
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(fileData));
+        return fileData;
+      }
+    }
+
+    return this.loadData();
+  }
+
+  // Check if file server is running
+  public static async checkFileServer(): Promise<boolean> {
+    try {
+      const response = await fetch(`${FILE_SERVER_URL}/health`);
+      const result = await response.json();
+      this.fileServerAvailable = result.status === 'ok';
+      return this.fileServerAvailable;
+    } catch {
+      this.fileServerAvailable = false;
+      return false;
+    }
+  }
+
+  public static isFileServerAvailable(): boolean | null {
+    return this.fileServerAvailable;
   }
 
   private static createDefaultData(): AppData {
@@ -26,9 +96,15 @@ export class StorageManager {
     try {
       // Create backup before saving new data
       this.createBackup();
-      
+
       const serializedData = JSON.stringify(data);
       localStorage.setItem(STORAGE_KEY, serializedData);
+
+      // Also save to file server for persistence (async, don't block)
+      this.saveToFileServer(data).catch(() => {
+        // Silently fail - localStorage is the primary storage
+      });
+
       return true;
     } catch (error) {
       console.error('Failed to save data to localStorage:', error);

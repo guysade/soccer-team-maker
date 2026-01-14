@@ -11,8 +11,8 @@ try {
     $Shortcut = $WshShell.CreateShortcut($shortcutPath)
     
     # Set shortcut properties
-    $Shortcut.TargetPath = "C:\Users\guysa\Documents\Soccer-app\soccer-team-maker\start-soccer-app.bat"
-    $Shortcut.WorkingDirectory = "C:\Users\guysa\Documents\Soccer-app\soccer-team-maker"
+    $Shortcut.TargetPath = "C:\Users\guysa\Documents\Soccer-team-maker\start-soccer-app.bat"
+    $Shortcut.WorkingDirectory = "C:\Users\guysa\Documents\Soccer-team-maker"
     $Shortcut.Description = "Launch Soccer Team Maker with local server"
     $Shortcut.IconLocation = "shell32.dll,137"
     

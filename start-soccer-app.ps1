@@ -7,8 +7,15 @@ $projectDir = "C:\Users\guysa\Documents\Soccer-team-maker"
 Set-Location $projectDir
 
 try {
+    # Start the data backup server first
+    Write-Host "Starting data backup server (port 3001)..." -ForegroundColor Yellow
+    $dataServerProcess = Start-Process -FilePath "node" -ArgumentList "server.js" -WindowStyle Minimized -PassThru
+
+    # Wait a moment for data server
+    Start-Sleep -Seconds 2
+
     # Start the development server in a new window
-    Write-Host "Starting development server..." -ForegroundColor Yellow
+    Write-Host "Starting development server (port 3000)..." -ForegroundColor Yellow
     $serverProcess = Start-Process -FilePath "cmd" -ArgumentList "/c", "npm start" -WindowStyle Minimized -PassThru
 
     # Wait for server to start
@@ -42,16 +49,20 @@ try {
 
     Write-Host ""
     Write-Host "Soccer Team Maker is now running!" -ForegroundColor Green
-    Write-Host "Server PID: $($serverProcess.Id)" -ForegroundColor Cyan
+    Write-Host "Data Server PID: $($dataServerProcess.Id)" -ForegroundColor Cyan
+    Write-Host "React Server PID: $($serverProcess.Id)" -ForegroundColor Cyan
     Write-Host "URL: http://localhost:3000" -ForegroundColor Cyan
     Write-Host ""
-    Write-Host "Press any key to stop the server and exit..." -ForegroundColor Red
+    Write-Host "Your data is backed up to: soccer-data.json" -ForegroundColor Green
+    Write-Host ""
+    Write-Host "Press any key to stop both servers and exit..." -ForegroundColor Red
     $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 
-    # Stop the server process
-    Write-Host "Stopping server..." -ForegroundColor Yellow
+    # Stop both server processes
+    Write-Host "Stopping servers..." -ForegroundColor Yellow
+    Stop-Process -Id $dataServerProcess.Id -Force -ErrorAction SilentlyContinue
     Stop-Process -Id $serverProcess.Id -Force -ErrorAction SilentlyContinue
-    Write-Host "Server stopped." -ForegroundColor Green
+    Write-Host "Servers stopped." -ForegroundColor Green
 
 } catch {
     Write-Host "Error: $_" -ForegroundColor Red
